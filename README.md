@@ -30,6 +30,7 @@ commit the changed lockfile.
 | `lua/config/autocmds.lua` | Autocommands |
 | `lua/plugins/ruby.lua` | ruby-lsp from PATH, RuboCop via the LSP |
 | `lua/plugins/snacks.lua` | Show dotfiles and gitignored files in pickers |
+| `lua/plugins/noice.lua` | Longer-lived error/warning notifications |
 | `lua/plugins/gitsigns.lua` | Inline git blame (GitLens-style) |
 | `lazy-lock.json` | Pinned plugin versions — commit changes to this |
 
