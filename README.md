@@ -28,6 +28,7 @@ commit the changed lockfile.
 | `lua/config/keymaps.lua` | Custom keymaps (VS Code-style layer) |
 | `lua/config/options.lua` | Vim options |
 | `lua/config/autocmds.lua` | Autocommands |
+| `lua/plugins/ruby.lua` | ruby-lsp from PATH, RuboCop via the LSP |
 | `lua/plugins/snacks.lua` | Show dotfiles and gitignored files in pickers |
 | `lua/plugins/gitsigns.lua` | Inline git blame (GitLens-style) |
 | `lazy-lock.json` | Pinned plugin versions — commit changes to this |
