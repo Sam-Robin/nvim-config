@@ -36,6 +36,23 @@ return {
     { "<leader>aa", "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept diff" },
     { "<leader>ad", "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Deny diff" },
     {
+      "<leader>an",
+      function()
+        local port = require("claudecode").state.port
+        if not port then
+          return vim.notify("Open Claude first with <leader>ac", vim.log.levels.WARN)
+        end
+        if not vim.env.TMUX then
+          return vim.notify("Not inside tmux", vim.log.levels.WARN)
+        end
+        vim.fn.system({
+          "tmux", "split-window", "-h", "-c", vim.fn.getcwd(),
+          ("ENABLE_IDE_INTEGRATION=true CLAUDE_CODE_SSE_PORT=%d claude"):format(port),
+        })
+      end,
+      desc = "New Claude in tmux pane (shares this nvim)",
+    },
+    {
       "<leader>aw",
       function()
         if not vim.env.TMUX then
