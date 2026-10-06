@@ -5,6 +5,7 @@
 return {
   "coder/claudecode.nvim",
   dependencies = { "folke/snacks.nvim" },
+  cmd = { "ClaudeCode", "ClaudeCodeFocus", "ClaudeCodeAdd", "ClaudeCodeSend" },
   -- Esc stays with Claude (it interrupts a running turn). Ctrl+Q hides
   -- the pane from inside it; Snacks' built-in double-Esc (within 200ms)
   -- drops to normal mode if you want to scroll instead.
@@ -34,5 +35,20 @@ return {
     { "<leader>as", "<cmd>ClaudeCodeTreeAdd<cr>", desc = "Add file", ft = { "snacks_picker_list", "oil" } },
     { "<leader>aa", "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept diff" },
     { "<leader>ad", "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Deny diff" },
+    {
+      "<leader>aw",
+      function()
+        if not vim.env.TMUX then
+          return vim.notify("Not inside tmux. Start a branch with `wt <branch>`.", vim.log.levels.WARN)
+        end
+        local sessions = vim.fn.systemlist({ "tmux", "list-sessions", "-F", "#S" })
+        vim.ui.select(sessions, { prompt = "Switch worktree" }, function(choice)
+          if choice then
+            vim.fn.system({ "tmux", "switch-client", "-t", choice })
+          end
+        end)
+      end,
+      desc = "Switch worktree session",
+    },
   },
 }
