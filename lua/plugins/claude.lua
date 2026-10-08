@@ -10,6 +10,9 @@ return {
   -- the pane from inside it; Snacks' built-in double-Esc (within 200ms)
   -- drops to normal mode if you want to scroll instead.
   opts = {
+    -- Context is opt-in via <leader>ab / <leader>as; auto-tracking stamped
+    -- "[in file.rb]" onto every prompt after switching windows.
+    track_selection = false,
     terminal = {
       snacks_win_opts = {
         keys = {
