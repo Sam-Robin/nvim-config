@@ -32,6 +32,7 @@ commit the changed lockfile.
 | `lua/plugins/snacks.lua` | Show dotfiles and gitignored files in pickers |
 | `lua/plugins/noice.lua` | Longer-lived error/warning notifications |
 | `lua/plugins/gitsigns.lua` | Inline git blame (GitLens-style) |
+| `lua/plugins/matrix.lua` | `<leader>ur` rains the buffer, green rain on the dashboard, neoscroll |
 | `lazy-lock.json` | Pinned plugin versions — commit changes to this |
 
 ## Custom keymaps
