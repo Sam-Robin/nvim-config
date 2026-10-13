@@ -32,7 +32,9 @@ commit the changed lockfile.
 | `lua/plugins/snacks.lua` | Show dotfiles and gitignored files in pickers |
 | `lua/plugins/noice.lua` | Longer-lived error/warning notifications |
 | `lua/plugins/gitsigns.lua` | Inline git blame (GitLens-style) |
-| `lua/plugins/matrix.lua` | `<leader>ur` rains the buffer, green rain on the dashboard, neoscroll |
+| `lua/plugins/neoscroll.lua` | Smooth scrolling for `<C-d>`/`<C-u>` |
+| `lua/busy.lua` | Statusline spinner while Claude works (driven by `~/.claude/hooks/matrix.sh`) |
+| `lua/plugins/lualine.lua` | Shows the busy spinner in the statusline |
 | `lazy-lock.json` | Pinned plugin versions — commit changes to this |
 
 ## Custom keymaps
